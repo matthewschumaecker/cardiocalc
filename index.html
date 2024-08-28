@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalist Web Page</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header-banner">
+        <h1>Echo Equations</h1>
+        <h3>So many equations...such little time</h3>
+    </header>
+
+    <!--Navbar left section-->
+    <div class="d-flex">
+        <nav class="nav flex-column bg-light p-3" style="width: 250px; height: 100vh;">
+
+
+            <div class="nav-item">
+                <a class="nav-link" href="#">Valves</a>
+                    <div class="ml-3">
+                    <a class="nav-link" href="#" id="aorticStenosisLink">Aortic Stenosis</a>
+                    <a class="nav-link" href="#">Aortic Regurgitation</a>
+                    <a class="nav-link" href="#">Mitral Stenosis</a>
+                    <a class="nav-link" href="#">Mitral Regurgitation</a>
+                    <a class="nav-link" href="#">Chamber Quantification</a>
+                     <div class="ml-3">
+                    <a class="nav-link" href="#">LV</a>
+                    <a class="nav-link" href="#">RV</a>
+                    <a class="nav-link" href="#">LA</a>
+                    <a class="nav-link" href="#">RA</a>
+                    <a class="nav-link" href="#">Pulmonary Pressure</a>
+                    <a class="nav-link" href="#">Doppler Equation</a>
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#">Help with PISA</a>
+                    <a class="nav-link" href="#">Prosthetic Valves</a>
+                    <a class="nav-link" href="#">Help with PISA</a>
+            </div>
+        </nav>
+    </div>
+
+
+
+
+    <!-- Aortic valve form-->
+        <div class="container mt-4" id="aorticValveSection" style="display: none;">
+            <h2>Aortic Valve Area/Dimensionless Index</h2>
+            <form id="aorticValveForm">
+                <div class="form-group">
+                    <label for="lvotVti">LVOT VTI:</label>
+                    <input type="number" class="form-control" id="lvotVti" step="any">
+                </div>
+                <div class="form-group">
+                    <label for="avVti">AV VTI:</label>
+                    <input type="number" class="form-control" id="avVti" step="any">
+                </div>
+                <div class="form-group">
+                    <label for="lvotDiam">LVOT Diameter (CM):</label>
+                    <input type="number" class="form-control" id="lvotDiam" step="any">
+                </div>
+            </form>
+            <div>
+                <h3>Results:</h3>
+                <p>Aortic Valve Area: <span id="aorticValveArea">--</span>cm<sup>2</sup></p>
+                <p>Dimensionless Index: <span id="dimensionlessIndex">--</span></p>
+                <hr>
+                <div id="av_explain">
+                    <h6>Explanation</h6>
+                    <p>The aortic valve area (AVA) by the continuity equation is given by:</p>
+                    <div class="equation">
+                        AVA = (CSA<sub>LVOT</sub> × VTI<sub>LVOT</sub>) / VTI<sub>AV</sub>
+                    </div>
+                    <p>Where:</p>
+                    <ul>
+                        <li>AVA is the calculated aortic valve area</li>
+                        <li>CSA<sub>LVOT</sub> is the cross-sectional area of the left ventricular outflow tract</li>
+                        <li>VTI<sub>LVOT</sub> is the velocity-time integral of the LVOT</li>
+                        <li>VTI<sub>AV</sub> is the velocity-time integral of the aortic valve</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src='./calculator.js'></script>
+</body>
+
+</html>
