@@ -11,107 +11,132 @@
 </head>
 
 <body>
-    <header class="header-banner">
-        <h1>Echo Equations</h1>
-        <h3>So many equations...such little time</h3>
-    </header>
+<header class="header-banner">
+    <h1>Echo Equations</h1>
+    <h3>So many equations...such little time</h3>
+</header>
 
-    <!--Navbar left section-->
-    <div class="d-flex">
-        <nav class="nav flex-column bg-light p-3" style="width: 250px; height: 100vh;">
-
-
-            <div class="nav-item">
-                <a class="nav-link" href="#">Valves</a>
-                    <div class="ml-3">
-                    <a class="nav-link" href="#" id="aorticStenosisLink">Aortic Stenosis</a>
-                    <a class="nav-link" href="#">Aortic Regurgitation</a>
-                    <a class="nav-link" href="#">Mitral Stenosis</a>
-                    <a class="nav-link" href="#">Mitral Regurgitation</a>
-                        <div class="ml-3">
-                            <a class="nav-link" href="#">Chamber Quantification</a>
-
+<!--Navbar left section-->
+<div class="d-flex">
+    <nav class="nav flex-column bg-light p-3" style="width: 250px; height: 100vh;">
+        <div class="nav-item">
+            <a class="nav-link" href="#">Valves</a>
+            <div class="ml-3">
+                <a class="nav-link" href="#" id="aorticStenosisLink">Aortic Stenosis</a>
+                <a class="nav-link" href="#" id="aorticRegurgitationLink">Aortic Regurgitation</a>
+                <a class="nav-link" href="#">Mitral Stenosis</a>
+                <a class="nav-link" href="#">Mitral Regurgitation</a>
+                <div class="ml-3">
+                    <a class="nav-link" href="#">Chamber Quantification</a>
                     <a class="nav-link" href="#">LV</a>
                     <a class="nav-link" href="#">RV</a>
                     <a class="nav-link" href="#">LA</a>
-                    <a class="nav-link" href="#">RA</a></div>
-                    <a class="nav-link" href="#">Pulmonary Pressure</a>
-                    <a class="nav-link" href="#">Doppler Equation</a>
-                    <a class="nav-link" href="#"></a>
-                    <a class="nav-link" href="#">Help with PISA</a>
-                    <a class="nav-link" href="#">Prosthetic Valves</a>
-                    <a class="nav-link" href="#">Help with PISA</a>
+                    <a class="nav-link" href="#">RA</a>
+                </div>
+                <a class="nav-link" href="#">Pulmonary Pressure</a>
+                <a class="nav-link" href="#">Doppler Equation</a>
+                <a class="nav-link" href="#">Help with PISA</a>
+                <a class="nav-link" href="#">Prosthetic Valves</a>
+                <a class="nav-link" href="#">Help with PISA</a>
             </div>
-        </nav>
+        </div>
+    </nav>
+
+
+    <div class="container mt-4" id="testSection" style="display: none;">
+        <h1>Test Section</h1>
     </div>
-
-
-
-
     <!-- Aortic valve form-->
-        <div class="container mt-4" id="aorticValveSection" style="display: none;">
-            <h2>Aortic Valve Area/Dimensionless Index</h2>
-            <form id="aorticValveForm">
-                <div class="form-group">
-                    <label for="lvotVti">LVOT VTI:</label>
-                    <input type="number" class="form-control" id="lvotVti" step="any">
+    <div class="container mt-4" id="aorticValveSection" style="display: none;">
+        <h2>Aortic Valve Area/Dimensionless Index</h2>
+        <form id="aorticValveForm">
+            <div class="form-group">
+                <label for="lvotVti">LVOT VTI:</label>
+                <input type="number" class="form-control" id="lvotVti" step="any">
+            </div>
+            <div class="form-group">
+                <label for="avVti">AV VTI:</label>
+                <input type="number" class="form-control" id="avVti" step="any">
+            </div>
+            <div class="form-group">
+                <label for="lvotDiam">LVOT Diameter (CM):</label>
+                <input type="number" class="form-control" id="lvotDiam" step="any">
+            </div>
+        </form>
+
+
+        <div>
+            <h3>Results:</h3>
+            <p>Aortic Valve Area: <span id="aorticValveArea">--</span>cm<sup>2</sup></p>
+            <p>Dimensionless Index: <span id="dimensionlessIndex">--</span></p>
+            <p><span id="aorticStenosisSeverity"</p>
+            <hr>
+            <div id="av_explain">
+                <h6>Explanation</h6>
+                <p>The aortic valve area (AVA) by the continuity equation is given by:</p>
+                <div class="equation">
+                    AVA = (CSA<sub>LVOT</sub> × VTI<sub>LVOT</sub>) / VTI<sub>AV</sub>
                 </div>
-                <div class="form-group">
-                    <label for="avVti">AV VTI:</label>
-                    <input type="number" class="form-control" id="avVti" step="any">
-                </div>
-                <div class="form-group">
-                    <label for="lvotDiam">LVOT Diameter (CM):</label>
-                    <input type="number" class="form-control" id="lvotDiam" step="any">
-                </div>
-            </form>
-            <div>
-                <h3>Results:</h3>
-                <p>Aortic Valve Area: <span id="aorticValveArea">--</span>cm<sup>2</sup></p>
-                <p>Dimensionless Index: <span id="dimensionlessIndex">--</span></p>
-                <hr>
-                <div id="av_explain">
-                    <h6>Explanation</h6>
-                    <p>The aortic valve area (AVA) by the continuity equation is given by:</p>
-                    <div class="equation">
-                        AVA = (CSA<sub>LVOT</sub> × VTI<sub>LVOT</sub>) / VTI<sub>AV</sub>
-                    </div>
-                    <p>Where:</p>
-                    <ul>
-                        <li>AVA is the calculated aortic valve area</li>
-                        <li>CSA<sub>LVOT</sub> is the cross-sectional area of the left ventricular outflow tract</li>
-                        <li>VTI<sub>LVOT</sub> is the velocity-time integral of the LVOT</li>
-                        <li>VTI<sub>AV</sub> is the velocity-time integral of the aortic valve</li>
-                    </ul>
-                </div>
+                <p>Where:</p>
+                <ul>
+                    <li>AVA is the calculated aortic valve area</li>
+                    <li>CSA<sub>LVOT</sub> is the cross-sectional area of the left ventricular outflow tract</li>
+                    <li>VTI<sub>LVOT</sub> is the velocity-time integral of the LVOT</li>
+                    <li>VTI<sub>AV</sub> is the velocity-time integral of the aortic valve</li>
+                </ul>
             </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src='./calculator.js'></script>
-    <script>
-        $(document).ready(function() {
-            $('#aorticStenosisLink').on('click', function(event) {
-                event.preventDefault();
-                $('#aorticValveSection').show();
-            });
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const aorticStenosisLink = document.getElementById('aorticStenosisLink');
+        const aorticValveSection = document.getElementById('aorticValveSection');
+        const lvotVtiInput = document.getElementById('lvotVti');
+        const lvotDiamInput = document.getElementById('lvotDiam');
+        const avVtiInput = document.getElementById('avVti');
+        const aorticValveAreaOutput = document.getElementById('aorticValveArea');
+        const dimensionlessIndexOutput = document.getElementById('dimensionlessIndex');
+
+        aorticStenosisLink.addEventListener('click', function (event) {
+            event.preventDefault();
+            aorticValveSection.style.display = 'block';
         });
-    </script>
+
+        aorticRegurgitationLink.addEventListener('click', function (event) {
+            event.preventDefault();
+            testSection.style.display = 'block';
+        });
+        function calculateResults() {
+            const lvotVti = parseFloat(lvotVtiInput.value);
+            const lvotDiam = parseFloat(lvotDiamInput.value);
+            const avVti = parseFloat(avVtiInput.value);
+
+            if (!isNaN(lvotVti) && !isNaN(lvotDiam) && !isNaN(avVti) && avVti !== 0) {
+                // Calculate CSA of LVOT
+                const lvotCsa = Math.PI * Math.pow(lvotDiam / 2, 2);
+                // Calculate Aortic Valve Area using the continuity equation
+                const aorticValveArea = (lvotCsa * lvotVti) / avVti;
+                aorticValveAreaOutput.textContent = aorticValveArea.toFixed(2);
+            } else {
+                aorticValveAreaOutput.textContent = 'N/A';
+            }
+
+            if (!isNaN(lvotVti) && !isNaN(avVti) && avVti !== 0) {
+                const dimensionlessIndex = lvotVti / avVti;
+                dimensionlessIndexOutput.textContent = dimensionlessIndex.toFixed(2);
+            } else {
+                dimensionlessIndexOutput.textContent = 'N/A';
+            }
+        }
+
+        lvotVtiInput.addEventListener('input', calculateResults);
+        lvotDiamInput.addEventListener('input', calculateResults);
+        avVtiInput.addEventListener('input', calculateResults);
+    });
+</script>
 </body>
 
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
-    <script src="calculator.js" defer></script>
-</head>
-<body>
-    <h1>Welcome to the Calculator</h1>
-    <div id="calculator">
-        <!-- Calculator UI elements go here -->
-    </div>
-</body>
 </html>
