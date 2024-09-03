@@ -47,45 +47,6 @@
     <div class="container mt-4" id="testSection" style="display: none;">
         <h1>Test Section</h1>
     </div>
-    <!-- Aortic valve form-->
-    <div class="container mt-4" id="aorticValveSection" style="display: none;">
-        <h2>AVA/DI</h2>
-        <form id="aorticValveForm">
-            <div class="form-group">
-                <label for="lvotVti">LVOT VTI:</label>
-                <input type="number" class="form-control" id="lvotVti" step="any">
-            </div>
-            <div class="form-group">
-                <label for="avVti">AV VTI:</label>
-                <input type="number" class="form-control" id="avVti" step="any">
-            </div>
-            <div class="form-group">
-                <label for="lvotDiam">LVOT Diameter (CM):</label>
-                <input type="number" class="form-control" id="lvotDiam" step="any">
-            </div>
-        </form>
-        <div>
-            <h3>Results:</h3>
-            <p>Aortic Valve Area: <span id="aorticValveArea">--</span>cm<sup>2</sup></p>
-            <p>Dimensionless Index: <span id="dimensionlessIndex">--</span></p>
-            <p><span id="aorticStenosisSeverity"></span></p>
-            <hr>
-            <div id="av_explain">
-                <h6>Explanation</h6>
-                <p>The aortic valve area (AVA) by the continuity equation is given by:</p>
-                <div class="equation">
-                    AVA = (CSA<sub>LVOT</sub> × VTI<sub>LVOT</sub>) / VTI<sub>AV</sub>
-                </div>
-                <p>Where:</p>
-                <ul>
-                    <li>AVA is the calculated aortic valve area</li>
-                    <li>CSA<sub>LVOT</sub> is the cross-sectional area of the left ventricular outflow tract</li>
-                    <li>VTI<sub>LVOT</sub> is the velocity-time integral of the LVOT</li>
-                    <li>VTI<sub>AV</sub> is the velocity-time integral of the aortic valve</li>
-                </ul>
-            </div>
-        </div>
-    </div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
