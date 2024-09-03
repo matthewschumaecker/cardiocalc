@@ -46,6 +46,16 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#aorticStenosisLink').click(function(event) {
+            event.preventDefault();
+            $('#aorticValveSection').load('aortic_valve.html', function() {
+                $(this).show();
+            });
+        });
+    });
+</script>
 <script src="calculator.js"></script>
 </body>
 
