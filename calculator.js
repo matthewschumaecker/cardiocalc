@@ -1,12 +1,22 @@
 document.addEventListener('DOMContentLoaded', function () {
     const aorticStenosisLink = document.getElementById('aorticStenosisLink');
+    const mitralValveLink = document.getElementById('mitralValveLink');
     const aorticValveSection = document.getElementById('aorticValveSection');
+    const mitralValveSection = document.getElementById('mitralValveSection');
     const lvotVtiInput = document.getElementById('lvotVti');
 
     aorticStenosisLink.addEventListener('click', function (event) {
         event.preventDefault();
         aorticValveSection.style.display = 'block';
     });
+
+   mitralValveLink.addEventListener('click', function (event) {
+        event.preventDefault();
+        mitralValveSection.style.display = 'block';
+    });
+
+
+
     const lvotDiamInput = document.getElementById('lvotDiam');
     const avVtiInput = document.getElementById('avVti');
     const aorticValveAreaOutput = document.getElementById('aorticValveArea');
