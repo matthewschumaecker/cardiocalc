@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function hideAllSections() {
         console.log('Hiding all sections');
-        const sections = document.querySelectorAll('.section');
+        const sections = document.querySelectorAll('#aorticValveSection, #mitralValveSection');
         sections.forEach(section => {
             section.style.display = 'none';
         });
