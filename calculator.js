@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function hideAllSections() {
         console.log('Hiding all sections');
-        const sections = document.querySelectorAll('#aorticValveSection, #mitralValveSection');
+        const sections = document.querySelectorAll('#aorticValveSection, #mitralStenosisSection');
         sections.forEach(section => {
             section.style.display = 'none';
         });
@@ -19,10 +19,10 @@ document.addEventListener('DOMContentLoaded', function () {
         aorticValveSection.style.display = 'block';
     });
 
-    mitralValveLink.addEventListener('click', function (event) {
+    mitralStenosisLink.addEventListener('click', function (event) {
         event.preventDefault();
         hideAllSections();
-        mitralValveSection.style.display = 'block';
+        mitralStenosisSection.style.display = 'block';
     });
 
 
