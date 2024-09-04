@@ -8,11 +8,13 @@ document.addEventListener('DOMContentLoaded', function () {
     aorticStenosisLink.addEventListener('click', function (event) {
         event.preventDefault();
         aorticValveSection.style.display = 'block';
+        mitralValveSection.style.display = 'none';
     });
 
-   mitralValveLink.addEventListener('click', function (event) {
+    mitralValveLink.addEventListener('click', function (event) {
         event.preventDefault();
         mitralValveSection.style.display = 'block';
+        aorticValveSection.style.display = 'none';
     });
 
 
