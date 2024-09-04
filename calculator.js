@@ -5,16 +5,23 @@ document.addEventListener('DOMContentLoaded', function () {
     const mitralValveSection = document.getElementById('mitralValveSection');
     const lvotVtiInput = document.getElementById('lvotVti');
 
+    function hideAllSections() {
+        const sections = document.querySelectorAll('.section');
+        sections.forEach(section => {
+            section.style.display = 'none';
+        });
+    }
+
     aorticStenosisLink.addEventListener('click', function (event) {
         event.preventDefault();
+        hideAllSections();
         aorticValveSection.style.display = 'block';
-        mitralValveSection.style.display = 'none';
     });
 
     mitralValveLink.addEventListener('click', function (event) {
         event.preventDefault();
+        hideAllSections();
         mitralValveSection.style.display = 'block';
-        aorticValveSection.style.display = 'none';
     });
 
 
