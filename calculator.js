@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const lvotVtiInput = document.getElementById('lvotVti');
 
     function hideAllSections() {
+        console.log('Hiding all sections');
         const sections = document.querySelectorAll('.section');
         sections.forEach(section => {
             section.style.display = 'none';
