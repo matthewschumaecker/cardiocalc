@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const aliasingVelocityInput = document.getElementById('aliasingVelocity');
     const mrVtimaxInput = document.getElementById('mrVtiMax');
-    const mrRadiusInput = document.getElementById('mrRadius');
+    const mrRadiusInput = document.getElementById('radius');
     const eroaOutput = document.getElementById('eroaResult');
 
     function calculatePISA(){
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const mrVtimax = parseFloat(mrVtimaxInput.value);
         const mrRadius = parseFloat(mrRadiusInput.value);
         if (!isNaN(aliasingVelocity) && !isNaN(mrVtimax) && !isNaN(mrRadius)){
-            eroa = Math.PI*mrRadius**2*aliasingVelocity/mrRadius;
+            const eroa = (Math.PI * Math.pow(mrRadius, 2) * aliasingVelocity) / mrVtimax;
             eroaOutput.textContent = eroa.toFixed(2);
         }else{
             eroaOutput.textContent = 'N/A';
