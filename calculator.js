@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const aliasingVelocityInput = document.getElementById('aliasingVelocity');
     const mrVtimaxInput = document.getElementById('mrVtiMax');
-    const mrRadiusInput = document.getElementById('radius');
+    const mrRadiusInput = document.getElementById('MRradius');
     const eroaOutput = document.getElementById('eroaResult');
 
     function calculatePISA(){

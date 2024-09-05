@@ -1,0 +1,55 @@
+body {
+    font-family: 'Roboto Mono', monospace;
+    margin: 0;
+    padding: 0;
+}
+
+.header-banner {
+    background-color: #343a40;
+    color: white;
+    padding: 20px;
+    text-align: left;
+    font-size: 24px;
+}
+
+.nav {
+    border-right: 1px solid #ccc;
+}
+
+.nav-item .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.nav-item:hover .dropdown-menu {
+    display: block;
+}
+
+.nav-link, .dropdown-item {
+    color: #555;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #007bff;
+}
+
+.nav-link.active {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.content {
+    background-color: #f1f1f1;
+    height: 100vh;
+    overflow-y: auto;
+}
+#av_explain {
+    font-size: 70%;
+}
+form {
+    width: 20%;
+}
