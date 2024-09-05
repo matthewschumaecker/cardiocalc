@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const aliasingVelocityInput = document.getElementById('aliasingVelocity');
     const mrVtimaxInput = document.getElementById('mrVtiMax');
     const mrRadiusInput = document.getElementById('mrRadius');
-    const eroaOutput = document.getElementById('eroaOutput');
+    const eroaOutput = document.getElementById('eroaResult');
 
     function calculatePISA(){
         const aliasingVelocity = parseFloat(aliasingVelocityInput.value);
@@ -100,5 +100,5 @@ document.addEventListener('DOMContentLoaded', function () {
     avVtiInput.addEventListener('input', calculateAVAResults);
     mrVtimaxInput.addEventListener('input', calculatePISA);
     mrRadiusInput.addEventListener('input', calculatePISA);
-    aliasingVelocityInput.addEventListener('input', calculateAVAResults);
+    aliasingVelocityInput.addEventListener('input', calculatePISA);
 });
