@@ -1,4 +1,4 @@
-Document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
     const aorticStenosisLink = document.getElementById('aorticStenosisLink');
     const mitralValveLink = document.getElementById('mitralStenosisLink');
     const aorticValveSection = document.getElementById('aorticValveSection');
