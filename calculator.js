@@ -1,13 +1,18 @@
 document.addEventListener('DOMContentLoaded', function () {
     const aorticStenosisLink = document.getElementById('aorticStenosisLink');
-    const mitralValveLink = document.getElementById('mitralValveLink');
+    const mitralValveLink = document.getElementById('mitralStenosisLink');
     const aorticValveSection = document.getElementById('aorticValveSection');
-    const mitralValveSection = document.getElementById('mitralValveSection');
+    const mitralValveSection = document.getElementById('mitralStenosisSection');
+    const PISALink = document.getElementById('PISALink');
+    const PISASection = document.getElementById('PISASection');
+
     const lvotVtiInput = document.getElementById('lvotVti');
 
     function hideAllSections() {
         console.log('Hiding all sections');
-        const sections = document.querySelectorAll('#aorticValveSection, #mitralValveSection');
+        const sections = document.querySelectorAll(
+            '#aorticValveSection, #mitralStenosisSection, #PISASection'
+        );
         sections.forEach(section => {
             section.style.display = 'none';
         });
@@ -24,6 +29,12 @@ document.addEventListener('DOMContentLoaded', function () {
         hideAllSections();
         mitralValveSection.style.display = 'block';
     });
+
+    PISALink.addEventListener('click', function (event) {
+        event.preventDefault();
+        hideAllSections();
+        PISASection.style.display = 'block';
+    })
 
 
 
