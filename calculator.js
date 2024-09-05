@@ -6,7 +6,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const PISALink = document.getElementById('PISALink');
     const PISASection = document.getElementById('PISASection');
 
-    const lvotVtiInput = document.getElementById('lvotVti');
+    const radiusInput = document.getElementById('radius');
+    const aliasingVelocityInput = document.getElementById('aliasingVelocity');
+    const mrVtiMaxInput = document.getElementById('mrVtiMax');
+    const eroaResultOutput = document.getElementById('eroaResult');
 
     function hideAllSections() {
         console.log('Hiding all sections');
@@ -85,4 +88,19 @@ document.addEventListener('DOMContentLoaded', function () {
     lvotVtiInput.addEventListener('input', calculateResults);
     lvotDiamInput.addEventListener('input', calculateResults);
     avVtiInput.addEventListener('input', calculateResults);
-});
+    function calculateEROA() {
+        const radius = parseFloat(radiusInput.value);
+        const aliasingVelocity = parseFloat(aliasingVelocityInput.value);
+        const mrVtiMax = parseFloat(mrVtiMaxInput.value);
+
+        if (!isNaN(radius) && !isNaN(aliasingVelocity) && !isNaN(mrVtiMax) && mrVtiMax !== 0) {
+            const eroa = (Math.PI * Math.pow(radius, 2) * 2 * aliasingVelocity) / mrVtiMax;
+            eroaResultOutput.textContent = eroa.toFixed(2);
+        } else {
+            eroaResultOutput.textContent = 'N/A';
+        }
+    }
+
+    radiusInput.addEventListener('input', calculateEROA);
+    aliasingVelocityInput.addEventListener('input', calculateEROA);
+    mrVtiMaxInput.addEventListener('input', calculateEROA);
