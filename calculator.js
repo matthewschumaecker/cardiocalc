@@ -40,7 +40,6 @@ window.addEventListener('DOMContentLoaded', function () {
     })
 
 
-
     const lvotDiamInput = document.getElementById('lvotDiam');
     const avVtiInput = document.getElementById('avVti');
     const aorticValveAreaOutput = document.getElementById('aorticValveArea');
@@ -68,26 +67,28 @@ window.addEventListener('DOMContentLoaded', function () {
         var ASSseverity = "";
         dimensionlessIndex = dimensionlessIndexOutput.value;
 
-        if(!isNaN(dimensionlessIndexOutput.value)){
+        if (!isNaN(dimensionlessIndexOutput.value)) {
             const dimensionlessIndex = parseFloat(dimensionlessIndexOutput.value);
-            if (dimensionlessIndex > 0.5 && dimensionlessIndex < 0.75){
+            if (dimensionlessIndex > 0.5 && dimensionlessIndex < 0.75) {
                 ASSseverity = 'Mild Aortic Stenosis by DI';
             }
-            if (dimensionlessIndex > 0.25 && dimensionlessIndex <= 0.50){
+            if (dimensionlessIndex > 0.25 && dimensionlessIndex <= 0.50) {
                 ASSseverity = 'Moderate Aortic Stenosis by DI';
             }
-            if (dimensionlessIndex <= 0.25){
+            if (dimensionlessIndex <= 0.25) {
                 ASSseverity = 'Severe Aortic Stenosis by DI';
+            } else {
+                ASSseverity = 'No significant aortic Stenosis by DI'
             }
-            else {ASSseverity = 'No significant aortic Stenosis by DI'}
 
         }
-    };
+    }
 
 
     lvotVtiInput.addEventListener('input', calculateResults);
     lvotDiamInput.addEventListener('input', calculateResults);
     avVtiInput.addEventListener('input', calculateResults);
+
     function calculateEROA() {
         const radius = parseFloat(radiusInput.value);
         const aliasingVelocity = parseFloat(aliasingVelocityInput.value);
@@ -100,6 +101,7 @@ window.addEventListener('DOMContentLoaded', function () {
             eroaResultOutput.textContent = 'N/A';
         }
     }
+
 
     radiusInput.addEventListener('input', calculateEROA);
     aliasingVelocityInput.addEventListener('input', calculateEROA);
