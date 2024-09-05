@@ -64,24 +64,22 @@ window.addEventListener('DOMContentLoaded', function () {
             dimensionlessIndexOutput.textContent = 'N/A';
         }
 
-        var ASSseverity = "";
-        dimensionlessIndex = dimensionlessIndexOutput.value;
+        let ASSseverity = "";
+        const dimensionlessIndexValue = parseFloat(dimensionlessIndexOutput.textContent);
 
-        if (!isNaN(dimensionlessIndexOutput.value)) {
-            const dimensionlessIndex = parseFloat(dimensionlessIndexOutput.value);
-            if (dimensionlessIndex > 0.5 && dimensionlessIndex < 0.75) {
+        if (!isNaN(dimensionlessIndexValue)) {
+            if (dimensionlessIndexValue > 0.5 && dimensionlessIndexValue < 0.75) {
                 ASSseverity = 'Mild Aortic Stenosis by DI';
-            }
-            if (dimensionlessIndex > 0.25 && dimensionlessIndex <= 0.50) {
+            } else if (dimensionlessIndexValue > 0.25 && dimensionlessIndexValue <= 0.50) {
                 ASSseverity = 'Moderate Aortic Stenosis by DI';
-            }
-            if (dimensionlessIndex <= 0.25) {
+            } else if (dimensionlessIndexValue <= 0.25) {
                 ASSseverity = 'Severe Aortic Stenosis by DI';
             } else {
-                ASSseverity = 'No significant aortic Stenosis by DI'
+                ASSseverity = 'No significant aortic Stenosis by DI';
             }
-
         }
+
+        document.getElementById('aorticStenosisSeverity').textContent = ASSseverity;
     }
 
 
